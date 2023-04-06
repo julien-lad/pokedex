@@ -4,24 +4,22 @@ import viteLogo from '/vite.svg'
 import './App.css'
 import PokemonCard from './components/PokemonCard'
 
-const pokemonOne =
+const pokemonListe = [
     {
       imageName: "bulbasaur",
       imgSrc: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png",
-    }
-const  pokemonTwo =
-
+    },
     {
       imageName: "mew",
     }
- 
+  ]
 
+  const pokemon = pokemonListe[0]
   
   function App() {
     return (
     <>
-      <PokemonCard {...pokemonOne}/>
-      <PokemonCard {...pokemonTwo}/>
+      <PokemonCard {...pokemon}/>
     </>
     )
 }
