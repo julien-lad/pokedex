@@ -1,7 +1,7 @@
 function PokemonCard({imageName, imgSrc}){
     return (
 
-        <figure>
+      <figure>
         {imgSrc ? (<img src={imgSrc} alt={imageName} />
         ) : 
         (<p>???</p>
@@ -9,6 +9,7 @@ function PokemonCard({imageName, imgSrc}){
         <figcaption>{imageName}</figcaption>
       </figure>
 
+      
     )
 }
 
