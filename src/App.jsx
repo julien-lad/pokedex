@@ -4,6 +4,7 @@ import viteLogo from '/vite.svg'
 import './App.css'
 import PokemonCard from './components/PokemonCard'
 
+
 const pokemonListe = [
     {
       imageName: "bulbasaur",
@@ -14,12 +15,12 @@ const pokemonListe = [
     }
   ]
 
-  const pokemon = pokemonListe[0]
+  //const pokemon = pokemonListe[0]
   
   function App() {
     return (
     <>
-      <PokemonCard {...pokemon}/>
+      <PokemonCard pokemon = {pokemonListe[0]}/>
     </>
     )
 }
