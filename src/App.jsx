@@ -33,18 +33,18 @@ const pokemonListe = [
   function App() {
     const [pokemonIndex, setPokemonCount] = useState(0);
     
-    const handNext = () => {
+    const handleNext = () => {
       if (pokemonIndex < pokemonListe.length - 1) setPokemonCount(pokemonIndex + 1)
     }
-    const handPrevious = () => {
+    const handlePrevious = () => {
       if (pokemonIndex > 0) setPokemonCount(pokemonIndex - 1)
     }
     
     return (
     <>
       <PokemonCard pokemon = {pokemonListe[pokemonIndex]}/>
-      <button onClick={handPrevious}>précedent</button> 
-      <button onClick={handNext}>Suivant</button>  
+      <button onClick={handlePrevious}>précedent</button> 
+      <button onClick={handleNext}>Suivant</button>  
     </>);
 }
 
