@@ -4,6 +4,7 @@ import './App.css'
 import PokemonCard from './components/PokemonCard'
 import { useState } from 'react'
 import NavBar from './components/NavBar'
+import { useEffect } from 'react'
 
 const pokemonListe = [
   {
@@ -33,6 +34,13 @@ const pokemonListe = [
 
  
   function App() {
+    useEffect(
+      () =>{
+        alert("hello pokemon trainer :)");
+      },
+      []
+    );
+  
     const [pokemonIndex, setPokemonCount] = useState(0);
 
     const handlePrevious = () => {
@@ -42,11 +50,14 @@ const pokemonListe = [
     const handleNext = () => {
       if (pokemonIndex < pokemonListe.length - 1) setPokemonCount(pokemonIndex + 1)
     }
+    const pikachu = () => {
+      if (pokemonListe[pokemonIndex].imageName === "pikachu" ) alert ("pika pikachu !!!");   
+    }
     
     return (
     <>
       <PokemonCard pokemon = {pokemonListe[pokemonIndex]}/>
-      <NavBar handlePrevious = {handlePrevious} handleNext = {handleNext}/>
+      <NavBar handlePrevious = {handlePrevious} handleNext = {handleNext} pikachu = {pikachu()}/>
     </>
     );
 }
