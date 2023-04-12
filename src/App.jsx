@@ -2,10 +2,10 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 import PokemonCard from './components/PokemonCard'
-import { useState } from 'react'
 import NavBar from './components/NavBar'
-
-const pokemonListe = [
+import React, { useState } from "react";
+ 
+const pokemonList = [
   {
       imageName: "bulbasaur",
       imgSrc:
@@ -29,26 +29,24 @@ const pokemonListe = [
     {
       imageName: "mew",
     },
-  ];
+  ];  
 
- 
-  function App() {
-    const [pokemonIndex, setPokemonCount] = useState(0);
+function App() {
+      const [pokemonIndex, setPokemonIndex] = useState(0);
 
-    const handlePrevious = () => {
-      if (pokemonIndex > 0) setPokemonCount(pokemonIndex - 1)
-    }
-  
-    const handleNext = () => {
-      if (pokemonIndex < pokemonListe.length - 1) setPokemonCount(pokemonIndex + 1)
-    }
+      const handleSelect = (index) => {
+        setPokemonIndex(index)
+      }
     
-    return (
-    <>
-      <PokemonCard pokemon = {pokemonListe[pokemonIndex]}/>
-      <NavBar handlePrevious = {handlePrevious} handleNext = {handleNext}/>
-    </>
-    );
+      return (
+        <>
+          <PokemonCard pokemon = {pokemonList[pokemonIndex]} />
+          <NavBar pokemonList={pokemonList} handleSelect={handleSelect} />
+        </>
+      )
+    
 }
 
 export default App
+
+// a ligne 44 si besoin //<NavBar pokemonList = {handleSelect[setPokemonIndex]} />
